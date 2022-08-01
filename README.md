@@ -39,7 +39,7 @@ uvicorn main:app --reload
 
 <p align="center">
   <a href="https://fastapi.tiangolo.com/">
-    <img src="https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png" alt="fastAPI logo" width="100" height="100">
+    <img src="https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png" target="_blank" alt="fastAPI logo" width="100" height="100">
   </a>
 </p>
 
