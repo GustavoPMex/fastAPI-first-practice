@@ -6,7 +6,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 # FastAPI
-from fastapi import FastAPI, Body, Query
+from fastapi import FastAPI, Body, Query, Path
 
 
 # Instance
@@ -30,16 +30,15 @@ class Champion(BaseModel):
 def home():
     return {"first": "practice"}
 
-# Get LOL champion
-@app.get('/champs/{champ_id}')
-async def get_champ(champ_id: int):
-    return {"champ_id": champ_id}
 
 # Add new LOL champion
 @app.post('/champs/new')
 def create_champ(champion: Champion = Body(...)):
     return champion
 
+
+# Path operations
+# -- Be careful with the path order --
 
 # Query parameters
 @app.get('/champs/detail')
@@ -49,6 +48,8 @@ def show_champ(
     # Its defaul value is None.
     name: Optional[str] = Query(None, max_length=50),
     # In this case, this query parameter is required
-    role: Optional[str] = Query(...)
+    role: Optional[str] = Query(...),
+    difficulty: Optional[str] = Query(...)
 ):
-    return {name: role}
+    return {'details': {'name': name, 'role': role, 'difficulty': difficulty}}
+
