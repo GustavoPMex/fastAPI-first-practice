@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/GustavoPMex/social_network.git">
+  <a href="https://github.com/GustavoPMex/">
     <img src="https://i.imgur.com/b67v87R.png" alt="Logo" width="200" height="200">
   </a>
 
