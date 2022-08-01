@@ -6,7 +6,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 # FastAPI
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Query
 
 
 # Instance
@@ -39,3 +39,16 @@ async def get_champ(champ_id: int):
 @app.post('/champs/new')
 def create_champ(champion: Champion = Body(...)):
     return champion
+
+
+# Query parameters
+@app.get('/champs/detail')
+def show_champ(
+    # Query parameters always should be optionals
+    # In this case, we expect a string field and its length should be smaller than 50.
+    # Its defaul value is None.
+    name: Optional[str] = Query(None, max_length=50),
+    # In this case, this query parameter is required
+    role: Optional[str] = Query(...)
+):
+    return {name: role}
