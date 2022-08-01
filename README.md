@@ -38,14 +38,14 @@ uvicorn main:app --reload
 <br>
 
 <p align="center">
-  <a href="https://github.com/GustavoPMex/">
-    <img src="https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png" alt="Logo" width="100" height="100">
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png" alt="fastAPI logo" width="100" height="100">
   </a>
 </p>
-
-<br>
 
 ## Contact
 Twitter - [@gustavopmex](https://twitter.com/gustavopmex)
 
 LinkedIn - [Gustavo Alonso Pacheco Mex](https://www.linkedin.com/in/gustavopmex/)
+
+FastAPI - [Documentation](https://fastapi.tiangolo.com/)
