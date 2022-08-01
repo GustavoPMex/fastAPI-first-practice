@@ -1,6 +1,7 @@
 # main.py
 # Python
 from typing import Optional
+from enum import Enum
 
 # Pydantic
 from pydantic import BaseModel
@@ -14,6 +15,19 @@ app = FastAPI()
 
 
 # -- Models --
+class Role(Enum):
+    assassin = "assassin"
+    fighter = "fighter"
+    mage = "mages"
+    markman = "markman"
+    support = "support"
+    tank = "tank"
+
+class Difficulty:
+    low = "low"
+    moderate = "moderate"
+    high = "high"
+
 class Company(BaseModel):
     name: str
     email: str
@@ -71,7 +85,7 @@ def show_champ(
         description = "Enter the champ's difficulty"
     )
 ):
-    return {'details': {'name': name, 'role': role, 'difficulty': difficulty}}
+    return {"details": {"name": name, "role": role, "difficulty": difficulty}}
 
 # Path parameters
 @app.get('/champs/detail/{champ_id}')
@@ -84,4 +98,4 @@ def show_champ_by_id(
         description = "Enter the champ's id"
     )
 ):
-    return {'details': {'id': champ_id, 'name': 'example', 'role': 'example'}}
+    return {"details": {"id": champ_id, "name": "example", "role": "example"}}
