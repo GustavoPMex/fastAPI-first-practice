@@ -53,3 +53,10 @@ def show_champ(
 ):
     return {'details': {'name': name, 'role': role, 'difficulty': difficulty}}
 
+# Path parameters
+@app.get('/champs/detail/{champ_id}')
+def show_champ_by_id(
+    # Example; gt equals greater than
+    champ_id: int = Path(..., gt=0)
+):
+    return {'details': {'id': champ_id, 'name': 'example', 'role': 'example'}}
