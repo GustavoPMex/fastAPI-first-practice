@@ -20,7 +20,7 @@ class Champion(BaseModel):
     role: str
     difficulty: str
     # Optional Field
-    ultimate: Optional[bool] = None
+    ultimate: Optional[str] = None
 
 # -- Paths --
 # Path operation decorator init
