@@ -14,6 +14,11 @@ app = FastAPI()
 
 
 # -- Models --
+class Company(BaseModel):
+    name: str
+    email: str
+    website: str
+
 class Champion(BaseModel):
     # Field's Name  | Field's Type
     name: str
