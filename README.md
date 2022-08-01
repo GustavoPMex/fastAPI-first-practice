@@ -35,6 +35,13 @@ A FastAPI project based on League of legends' champions
 ```
 uvicorn main:app --reload
 ```
+<br>
+
+<p align="center">
+  <a href="https://github.com/GustavoPMex/">
+    <img src="https://seeklogo.com/images/F/fastapi-logo-541BAA112F-seeklogo.com.png" alt="Logo" width="100" height="100">
+  </a>
+</p>
 
 <br>
 
