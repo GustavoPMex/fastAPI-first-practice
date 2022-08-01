@@ -48,4 +48,11 @@ Twitter - [@gustavopmex](https://twitter.com/gustavopmex)
 
 LinkedIn - [Gustavo Alonso Pacheco Mex](https://www.linkedin.com/in/gustavopmex/)
 
+<br>
+
+## References
+Twitter - [@tiangolo](https://twitter.com/tiangolo)
+
+LinkedIn - [Sebastián Ramírez Montaño](https://www.linkedin.com/in/tiangolo/)
+
 FastAPI - [Documentation](https://fastapi.tiangolo.com/)
