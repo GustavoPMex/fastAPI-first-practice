@@ -4,7 +4,7 @@ from typing import Optional
 from enum import Enum
 
 # Pydantic
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 # FastAPI
 from fastapi import FastAPI, Body, Query, Path
@@ -15,6 +15,7 @@ app = FastAPI()
 
 
 # -- Models --
+# -- These models are for enum properties o characteristics
 class Role(Enum):
     assassin = "assassin"
     fighter = "fighter"
@@ -23,23 +24,35 @@ class Role(Enum):
     support = "support"
     tank = "tank"
 
-class Difficulty:
+class Difficulty(Enum):
     low = "low"
     moderate = "moderate"
     high = "high"
 
 class Company(BaseModel):
-    name: str
+    name: str = Field(
+        ...,
+        max_length=50
+    )
     email: str
     website: str
 
 class Champion(BaseModel):
     # Field's Name  | Field's Type
-    name: str
-    role: str
-    difficulty: str
+    name: str = Field(
+        ...,
+        max_length=50
+    )
+    role: Role = Field(
+        ...,
+    )
+    difficulty: Difficulty = Field(
+        ...,
+    )
     # Optional Field
-    ultimate: Optional[str] = None
+    ultimate: Optional[str] = Field(
+        default=None
+    )
 
 # -- Paths --
 # Path operation decorator init
