@@ -4,7 +4,8 @@ from typing import Optional
 from enum import Enum
 
 # Pydantic
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, \
+                     Field, EmailStr, HttpUrl
 
 # FastAPI
 from fastapi import FastAPI, Body, Query, Path
@@ -34,8 +35,8 @@ class Company(BaseModel):
         ...,
         max_length=50
     )
-    email: str
-    website: str
+    email: EmailStr
+    website: HttpUrl
 
 class Champion(BaseModel):
     # Field's Name  | Field's Type
@@ -69,6 +70,13 @@ def create_champ(
     champion: Champion = Body(...),
 ):
     return champion
+
+# Add new company
+@app.post('/companies/new')
+def create_company(
+    company: Company = Body(...),
+):
+    return company
 
 
 # Path operations
