@@ -71,6 +71,21 @@ def create_champ(
 ):
     return champion
 
+# Update LOL Champion using two instances
+@app.put('/champs/update-champ/{champ_id}')
+def update_champ(
+    champ_id: int = Path(
+        ...,
+        title="Champ Id",
+        description="Enter the champ's id"
+    ),
+    champion: Champion = Body(...),
+    company: Company = Body(...)
+):
+    result = champion.dict()
+    result.update(company.dict())
+    return result
+
 # Add new company
 @app.post('/companies/new')
 def create_company(
